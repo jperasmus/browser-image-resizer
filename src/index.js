@@ -120,7 +120,7 @@ function findMaxWidth(config, canvas) {
   }
   if (mWidth <= 0) {
     mWidth = 1;
-    console.warn("browser-image-resizer: image size is too small");
+    console.warn('browser-image-resizer: image size is too small');
   }
 
   return mWidth;
@@ -204,8 +204,8 @@ function scaleCanvasWithAlgorithm(canvas, config) {
 
   var scale = config.outputWidth / canvas.width;
 
-  scaledCanvas.width = canvas.width * scale;
-  scaledCanvas.height = canvas.height * scale;
+  scaledCanvas.width = Math.max(canvas.width * scale, 1);
+  scaledCanvas.height = Math.max(canvas.height * scale, 1);
 
   var srcImgData = canvas
     .getContext('2d')
