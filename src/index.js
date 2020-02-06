@@ -223,8 +223,8 @@ function scaleCanvasWithAlgorithm(canvas, config) {
 
 function getHalfScaleCanvas(canvas) {
   var halfCanvas = document.createElement('canvas');
-  halfCanvas.width = canvas.width / 2;
-  halfCanvas.height = canvas.height / 2;
+  halfCanvas.width = Math.max(canvas.width / 2, 1);
+  halfCanvas.height = Math.max(canvas.height / 2, 1);
 
   halfCanvas
     .getContext('2d')
